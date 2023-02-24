@@ -114,7 +114,6 @@ export const footerLinks = [
       },
     ],
   },
-  
   {
     title: "Community",
     links: [
