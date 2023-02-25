@@ -9,41 +9,40 @@ const Navbar = () => {
 
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar">
-      <img src={logo} alt="hoobank" className="w-[124px] h-[32px]" />
+      <img src={logo} alt="bank" className="w-[124px] h-[32px] float-left" />
 
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
         {navLinks.map((nav, index) => (
           <li
             key={nav.id}// every item in a map needs a key
-            className={`font-poppins font-normal cursor-pointer text-[16px] ${
-              active === nav.title ? "text-white" : "text-dimWhite"
-            } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
-            onClick={() => setActive(nav.title)}
+            className={`font-poppins font-normal cursor-pointer text-[16px] 
+            ${active === nav.title ? "text-white" : "text-dimWhite"
+            } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`} //if last index item margin right is zero
+            onClick={() => setActive(nav.title)}//on click sets the nav.title active changing the color
           >
-            <a href={`#${nav.id}`}>{nav.title}</a>//helps go that point when you click the link
+            <a href={`#${nav.id}`}>{nav.title} </a>
+  
           </li>
         ))}
       </ul>
 
-      <div className="sm:hidden flex flex-1 justify-end items-center">
-        <img
+      <div className="sm:hidden flex flex-1 justify-end items-center"> 
+        <img // for smaller viewports that has a toggle that has default value of false so it start with menu image
           src={toggle ? close : menu}
           alt="menu"
           className="w-[28px] h-[28px] object-contain"
-          onClick={() => setToggle(!toggle)}
+          onClick={() => setToggle((prev)=> !prev)} // changing state using previous state. So it goes back to previous state and vice versa
         />
-
         <div
-          className={`${
-            !toggle ? "hidden" : "flex"
+          className={`${ !toggle ? "hidden" : "flex" // if toggle is not turned on/ on default menu then its hidden else if on its a flex container
           } p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
         >
-          <ul className="list-none flex justify-end items-start flex-1 flex-col">
+          <ul className="list-none flex justify-end items-start flex-1 flex-col"> 
             {navLinks.map((nav, index) => (
               <li
                 key={nav.id}
-                className={`font-poppins font-medium cursor-pointer text-[16px] ${
-                  active === nav.title ? "text-white" : "text-dimWhite"
+                className={`font-poppins font-medium cursor-pointer text-[16px] 
+                ${active === nav.title ? "text-white" : "text-dimWhite"
                 } ${index === navLinks.length - 1 ? "mb-0" : "mb-4"}`}
                 onClick={() => setActive(nav.title)}
               >
