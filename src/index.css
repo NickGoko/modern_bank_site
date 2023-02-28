@@ -46,6 +46,28 @@
   );
 }
 
+.bg-orange-gradient {
+  background: linear-gradient(
+    141deg,
+    #E8E3D4 17%, 
+    #FFEFBF 32%,
+     #FFDF7F 48%,
+      #FFD452 65%,
+       #FFCA2A 80%,
+        #FFC107 100%
+  )
+}
+.text-orange-gradient {
+  background: radial-gradient(circle at 50% 50%, 
+  #E8E3D4 17%,
+   #FFEFBF 32%,
+    #FFDF7F 48%,
+     #FFD452 65%,
+      #FFCA2A 80%,
+       #FFC107 100%);
+
+}
+
 .bg-black-gradient {
   background: linear-gradient(
     144.39deg,
