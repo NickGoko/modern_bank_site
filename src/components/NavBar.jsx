@@ -14,7 +14,7 @@ const Navbar = () => {
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
         {navLinks.map((nav, index) => (
           <li
-            key={nav.id}// every item in a map needs a key
+            key={nav.id}
             className={`font-poppins font-normal cursor-pointer text-[16px] 
             ${active === nav.title ? "text-white" : "text-dimWhite"
             } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`} //if last index item margin right is zero
@@ -27,25 +27,20 @@ const Navbar = () => {
       </ul>
 
       <div className="sm:hidden flex flex-1 justify-end items-center"> 
-        <img // for smaller viewports that has a toggle that has default value of false so it start with menu image
-          src={toggle ? close : menu}
-          alt="menu"
-          className="w-[28px] h-[28px] object-contain"
-          onClick={() => setToggle((prev)=> !prev)} // changing state using previous state. So it goes back to previous state and vice versa
-        />
+      {/*Hidden on breakpoint >sm 
+      toggle that has default value of false so it start with menu image */}
+        <img src={toggle ? close : menu} alt="menu" className="w-[28px] h-[28px] object-contain"
+          onClick={() => setToggle((prev)=> !prev)} /> 
+          {/* changing state using previous state. So it goes back to previous state and vice versa*/}
+        {/*if toggle is not turned on/ on default menu then its hidden else if on its a flex container */}
         <div
-          className={`${ !toggle ? "hidden" : "flex" // if toggle is not turned on/ on default menu then its hidden else if on its a flex container
-          } p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
-        >
+          className={`${ !toggle ? "hidden" : "flex" } p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}>
           <ul className="list-none flex justify-end items-start flex-1 flex-col"> 
             {navLinks.map((nav, index) => (
-              <li
-                key={nav.id}
-                className={`font-poppins font-medium cursor-pointer text-[16px] 
+              <li key={nav.id} className={`font-poppins font-medium cursor-pointer text-[16px] 
                 ${active === nav.title ? "text-white" : "text-dimWhite"
                 } ${index === navLinks.length - 1 ? "mb-0" : "mb-4"}`}
-                onClick={() => setActive(nav.title)}
-              >
+                onClick={() => setActive(nav.title)}>
                 <a href={`#${nav.id}`}>{nav.title}</a>
               </li>
             ))}
