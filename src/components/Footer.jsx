@@ -15,7 +15,7 @@ const Footer = () => (
           A new way to make the payments easy, reliable and secure.
         </p>
       </div>
-
+      {/* all the links*/}
       <div className="flex-[1.5] w-full flex flex-row justify-between flex-wrap md:mt-0 mt-10">
         {footerLinks.map((footerlink) => (
           <div key={footerlink.title} className={`flex flex-col ss:my-0 my-4 min-w-[150px]`}>
@@ -26,11 +26,13 @@ const Footer = () => (
               {footerlink.links.map((link, index) => (
                 <li
                   key={link.name}
-                  className={`font-poppins font-normal text-[16px] leading-[24px] text-dimWhite hover:text-secondary cursor-pointer ${
+                  className={`font-poppins font-normal text-[16px] leading-[24px] text-dimWhite hover:text-secondary cursor-pointer 
+                  ${
                     index !== footerlink.links.length - 1 ? "mb-4" : "mb-0"
                   }`}
-                >
-                  {link.name}
+                >{/* all the links except the last one has a margin bottom of 4(16px or 1rem*/}
+                  {/* {link.name} */}
+                  <a>{link.name}</a>
                 </li>
               ))}
             </ul>
