@@ -68,14 +68,6 @@ export const feedback = [
     title: "Founder & Leader",
     // img: people03,
   },
-  {
-    id: "feedback-3",
-    content:
-      "It is usually people in the money business, finance, and international trade that are really rich.",
-    name: "Kenn Gallagher",
-    title: "Founder & Leader",
-    // img: people03,
-  },
 ];
 
 export const stats = [
@@ -87,12 +79,12 @@ export const stats = [
   {
     id: "stats-2",
     title: "Trusted by Company",
-    value: "130+",
+    value: "73+",
   },
   {
     id: "stats-3",
     title: "Transaction",
-    value: "Ksh230M+",
+    value: "Ksh130M+",
   },
 ];
 
