@@ -24,6 +24,7 @@ import people01 from "./people01.png";
 import people02 from "./people02.png";
 import people03 from "./people03.png";
 import hero1 from "./hero1.png";
+import logo1 from "./logo1.svg";
 export {
   airbnb,
   bill,
@@ -50,5 +51,6 @@ export {
   people01,
   people02,
   people03,
-  hero1
+  hero1,
+  logo1
 };

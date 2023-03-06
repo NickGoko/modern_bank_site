@@ -64,7 +64,12 @@
     #FFDF7F 48%,
      #FFD452 65%,
       #FFCA2A 80%,
-       #FFC107 100%);
+       #FFC107 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 
 }
 
